@@ -1,0 +1,11 @@
+{
+  "source_sha256": "6347d66cd7fa7ffa070b60529935e7ca9c93ef5c7f8dc61050fba33582f9aea1",
+  "source_rows": 14416,
+  "source_unique_groups": 68,
+  "source_dates": 106,
+  "source_outcomes": ["count", "volume"],
+  "files": {
+    "monthly_diagnostics.csv": "adc9802ba1613193b74393c528f00dba7ef39372b86aabc9758fb9388f18a371",
+    "event_group_diagnostics.csv": "fb602cff8cee11893a4fb6eae538c8128a978b3c402d08a925139a80f96f8e68"
+  }
+}
