@@ -1,0 +1,3 @@
+# Recovery inventory and publication gaps
+
+Local workspace audit found **129 historical phase reproducibility ZIPs**, totaling **1,158,462,147 bytes**. Their contents are *not* all published to GitHub. Phase 1–2 standalone ZIPs were not found in the present workspace. At least one historical source bundle exceeds GitHub's ordinary 100 MB file limit. Original SEC/Nasdaq/NYSE raw-source redistribution must undergo licensing review. Uploaded Phase 130 tables are reported outputs; complete independent end-to-end replication is still pending. Avoid describing this public repository as the complete historical archive until files, licenses, and SHA-256 manifests are checked and transferred.
