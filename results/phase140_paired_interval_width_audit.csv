@@ -1,0 +1,9 @@
+outcome,block_days,phase139_interval_width_pp_per_day,phase139_upper_below_zero,phase139_jul_sep_minus_phase137_slope_pp_per_day
+count,3,0.215569,true,0.000000291097
+count,5,0.215045,true,0.000000291097
+count,10,0.246308,true,0.000000291097
+count,15,0.252172,true,0.000000291097
+volume,3,0.205383,true,-0.000000052576
+volume,5,0.195718,true,-0.000000052576
+volume,10,0.194962,true,-0.000000052576
+volume,15,0.195387,true,-0.000000052576
