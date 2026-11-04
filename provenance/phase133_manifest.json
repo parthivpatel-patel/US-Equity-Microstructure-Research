@@ -3,8 +3,12 @@
   "source_rows": 14416,
   "source_unique_groups": 68,
   "source_dates": 106,
-  "source_outcomes": ["count", "volume"],
-  "files": {
+  "source_outcomes": [
+    "count",
+    "volume"
+  ],
+  "note": "The SHA-256 hashes below identify the full-precision locally executed CSV outputs. GitHub results/phase133_*.csv are six-decimal display extracts, not byte-identical to those outputs. Run the script with the original processed input to regenerate full-precision files; do not use these hashes to validate the rounded GitHub extracts.",
+  "full_precision_local_outputs": {
     "monthly_diagnostics.csv": "adc9802ba1613193b74393c528f00dba7ef39372b86aabc9758fb9388f18a371",
     "event_group_diagnostics.csv": "fb602cff8cee11893a4fb6eae538c8128a978b3c402d08a925139a80f96f8e68"
   }
