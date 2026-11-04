@@ -1,0 +1,13 @@
+{
+  "input_sha256": "6347d66cd7fa7ffa070b60529935e7ca9c93ef5c7f8dc61050fba33582f9aea1",
+  "rows": 14416,
+  "groups": 68,
+  "dates": 106,
+  "event_window_trading_days": 5,
+  "outputs": {
+    "event_scan.csv": "1b7b523c4eea3ef8a7b7e6cce0ca73436d93fa85f6121f6662b472b9701ba34d",
+    "oct_nov_group_changes.csv": "ae2fd30e4a06f05448e83eb183a4369f8d794e3a7b99382a389da6c9959046c6",
+    "summary.csv": "652fe842a9dd5bc4a69eee3d25bcab94cb51d832332d958a0db0f9edcf300fda",
+    "group_sensitivity.csv": "be6211c5e83f3121896fb18af4dde452f6b932b18575bdb69b2889e6ff268344"
+  }
+}
