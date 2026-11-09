@@ -1,7 +1,10 @@
 """Descriptive fixed-date placebo and HAC lag sensitivity; no causal authorization."""
 import datetime as dt
 import math
-from phase269_full_series_hac import full_series_hac
+try:
+    from scripts.phase269_full_series_hac import full_series_hac
+except ModuleNotFoundError:
+    from phase269_full_series_hac import full_series_hac
 
 def placebo_grid(series, cutoffs, lags, min_period=5):
     dates = [d for d, _ in series]
