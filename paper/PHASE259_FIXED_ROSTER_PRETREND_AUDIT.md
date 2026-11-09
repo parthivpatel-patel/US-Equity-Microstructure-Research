@@ -1,0 +1,9 @@
+# Phase 259: Fixed-roster matched pretrend descriptive audit
+
+November 9, 2026. This phase adds an executable, standard-library-only descriptive audit for a panel of daily matched treated-minus-control contrasts. It rejects duplicate date/pair observations, changing pair rosters, nonfinite outcomes, and weekend dates. It reports equal-pair-weight daily contrasts, an ordinary-least-squares preperiod slope per observed session, a late-versus-early preperiod difference, and the post-minus-pre contrast.
+
+Nine synthetic regression tests passed locally after correcting an erroneous test expectation (the six-date linear sequence has post-minus-pre 3.0, not 3.5). The synthetic linear trend gives slope 1.0, early-to-late preperiod drift 2.0, and post-minus-pre 3.0 **without any causal intervention**. This illustrates how a nonzero post-minus-pre estimate can coexist with preexisting drift.
+
+The code does not authenticate SEC files, treatment rosters, holiday calendars, matching, or licensing. Weekend rejection is not a substitute for an exchange holiday calendar. Observed-session slope does not adjust for elapsed-day gaps. It has no fixed effects, standard errors, serial-dependence adjustment, p-values, or causal interpretation. A frozen, independently authenticated matched roster and common-date series are required before applying it to historical data. September pretrends and the substantial October 2025 placebo warning remain unresolved. No historical coefficient was estimated.
+
+Previously reported local Phase 252–254 implementations and historical ZIP archives were not accessible for verified import in this session; no claim of a complete repository inventory is made. The November 14 target remains conditional on source and treatment authentication and historical robustness checks.
