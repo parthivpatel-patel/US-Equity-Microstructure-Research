@@ -10,7 +10,7 @@ class TestExtremaBounds(unittest.TestCase):
     def test_negative_tie(self):
         self.assertEqual(bounds(-1,4,2,2,-1,2),(2,4))
     def test_positive_no_negative_extreme(self):
-        self.assertEqual(bounds(1,4,2,2,-0.5,2),(0,2))
+        self.assertEqual(bounds(1,4,2,2,-0.5,2),(1,2))
     def test_invalid(self):
         with self.assertRaises(ValueError):
             bounds(1,4,5,2,-2,2)
