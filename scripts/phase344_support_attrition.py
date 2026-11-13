@@ -46,7 +46,7 @@ def analyze(rows):
         valid=[v for v in values if v is not None]
         return {'defined':len(valid),'undefined':len(values)-len(valid),
                 'min_pp':min(valid) if valid else None,'max_pp':max(valid) if valid else None,
-                'sign_reversals':sum((v>0)!=(base>0) for v in valid) if base is not None and base!=0 else None}
+                'sign_reversals':sum(v*base<0 for v in valid) if base is not None and base!=0 else None}
     return {'status':'DESCRIPTIVE_ONLY','source_authenticated':False,'input_rows':n,
             'total_cells':len(cells),'paired_cells':len(paired),'unsupported_cells':unsupported,
             'paired_fraction':len(paired)/len(cells),'supported_groups':len(groups),
