@@ -10,10 +10,10 @@ def audit_policy_provenance(policy,evidence):
             raise ValueError("invalid key")
         try: session=date.fromisoformat(key[1])
         except ValueError as exc: raise ValueError("invalid session") from exc
-        if session.isoformat()!=key[1] or isinstance(exchanges,(str,bytes)):
+        if session.isoformat()!=key[1] or not isinstance(exchanges,(list,tuple,set)):
             raise ValueError("invalid session or exchange collection")
         exchanges=tuple(exchanges)
-        if not exchanges or len(set(exchanges))!=len(exchanges) or any(not isinstance(v,str) or not v.strip() for v in exchanges):
+        if not exchanges or any(not isinstance(v,str) or not v.strip() for v in exchanges) or len(set(exchanges))!=len(exchanges):
             raise ValueError("invalid exchanges")
         item=evidence[key]
         if not isinstance(item,dict) or set(item)!={"source_sha256","source_locator","as_of","eligible_exchanges"}:
@@ -27,7 +27,7 @@ def audit_policy_provenance(policy,evidence):
         except (ValueError,TypeError) as exc: raise ValueError("invalid as-of date") from exc
         if as_of.isoformat()!=item["as_of"] or as_of>session: raise ValueError("invalid as-of chronology")
         documented=item["eligible_exchanges"]
-        if isinstance(documented,(str,bytes)) or not isinstance(documented,(list,tuple,set)) or len(documented)!=len(set(documented)) or set(documented)!=set(exchanges):
+        if isinstance(documented,(str,bytes)) or not isinstance(documented,(list,tuple,set)) or any(not isinstance(v,str) or not v.strip() for v in documented) or len(documented)!=len(set(documented)) or set(documented)!=set(exchanges):
             raise ValueError("policy/evidence contradiction")
         result[key]={"source_sha256":digest,"source_locator":locator,"as_of":item["as_of"],"eligible_exchanges":tuple(sorted(exchanges))}
     return {"entries":result,"source_bytes_authenticated":False,"historical_eligibility_authenticated":False,"status":"METADATA_ONLY_NOT_EMPIRICAL_AUTHENTICATION"}
