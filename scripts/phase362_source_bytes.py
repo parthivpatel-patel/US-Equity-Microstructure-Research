@@ -8,7 +8,7 @@ def verify_source_bytes(manifest, root):
     root = Path(root).resolve(strict=True)
     if not root.is_dir():
         raise ValueError("root must be directory")
-    seen, results = set(), []
+    seen, seen_resolved, results = set(), set(), []
     for item in manifest:
         if not isinstance(item, dict) or set(item) != {"path", "sha256"}:
             raise ValueError("invalid manifest entry")
@@ -22,6 +22,9 @@ def verify_source_bytes(manifest, root):
         resolved = (root / p).resolve(strict=True)
         if not resolved.is_relative_to(root) or not resolved.is_file():
             raise ValueError("source outside root or not file")
+        if resolved in seen_resolved:
+            raise ValueError("duplicate resolved source path")
+        seen_resolved.add(resolved)
         h, size = hashlib.sha256(), 0
         with resolved.open("rb") as handle:
             for chunk in iter(lambda: handle.read(1024 * 1024), b""):
