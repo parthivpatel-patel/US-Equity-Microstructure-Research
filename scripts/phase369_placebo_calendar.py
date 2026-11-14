@@ -10,7 +10,7 @@ def audit_calendar(sessions, event_dates, half_window=5):
         raise ValueError('half_window must be a positive integer')
     if not isinstance(sessions, (list, tuple)) or not isinstance(event_dates, (list, tuple)):
         raise ValueError('sessions and event_dates must be ordered sequences')
-    if any(type(d) is not date for d in sessions + event_dates):
+    if any(type(d) is not date for d in (*sessions, *event_dates)):
         raise ValueError('all entries must be datetime.date, not datetime.datetime')
     if list(sessions) != sorted(set(sessions)):
         raise ValueError('sessions must be strictly increasing and unique')
