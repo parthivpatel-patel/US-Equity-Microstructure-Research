@@ -26,15 +26,20 @@ def calendar_serial_components(rows, sessions, max_lag=1):
         seen.add((g,d)); counts[g]+=1; observed.add(d)
     if len(counts)<2 or len(observed)<2: raise ValueError("requires two groups and dates")
     G=len(counts); mean=sum(y/(G*counts[g]) for g,d,y in rows)
+    if not isfinite(mean): raise ValueError("nonfinite weighted mean")
     gs=defaultdict(float); ds=defaultdict(float); intersection=0.
     for g,d,y in rows:
         s=(y-mean)/(G*counts[g]); gs[g]+=s; ds[d]+=s; intersection+=s*s
+    if not all(isfinite(v) for v in gs.values()) or not all(isfinite(v) for v in ds.values()) or not isfinite(intersection):
+        raise ValueError("nonfinite covariance score")
     scores=[ds.get(d,0.) for d in sessions]
     limit=min(max_lag,len(sessions)-1)
     gamma=[sum(scores[t]*scores[t-l] for t in range(l,len(scores))) for l in range(limit+1)]
     serial=gamma[0]+2*sum((1-l/(max_lag+1))*gamma[l] for l in range(1,limit+1))
     group=sum(v*v for v in gs.values()); raw=group+gamma[0]-intersection
     adjusted=group+serial-intersection
+    if not all(isfinite(v) for v in gamma) or not all(isfinite(v) for v in (serial,group,raw,adjusted)):
+        raise ValueError("nonfinite covariance component")
     return dict(mean_pp=mean,groups=G,observed_sessions=len(observed),calendar_sessions=len(sessions),
                 missing_sessions=[d for d in sessions if d not in observed],lag_products=gamma,
                 group_component=group,date_component=gamma[0],intersection_component=intersection,
