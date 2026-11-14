@@ -1,5 +1,6 @@
 """Verify local source bytes against a declared SHA-256. Not historical authentication."""
 import hashlib
+import os
 from pathlib import Path
 
 def verify_source_bytes(manifest, root):
@@ -8,7 +9,7 @@ def verify_source_bytes(manifest, root):
     root = Path(root).resolve(strict=True)
     if not root.is_dir():
         raise ValueError("root must be directory")
-    seen, seen_resolved, results = set(), set(), []
+    seen, seen_resolved, seen_inodes, results = set(), set(), set(), []
     for item in manifest:
         if not isinstance(item, dict) or set(item) != {"path", "sha256"}:
             raise ValueError("invalid manifest entry")
@@ -27,6 +28,11 @@ def verify_source_bytes(manifest, root):
         seen_resolved.add(resolved)
         h, size = hashlib.sha256(), 0
         with resolved.open("rb") as handle:
+            stat = os.fstat(handle.fileno())
+            identity = (stat.st_dev, stat.st_ino)
+            if identity in seen_inodes:
+                raise ValueError("duplicate underlying source file")
+            seen_inodes.add(identity)
             for chunk in iter(lambda: handle.read(1024 * 1024), b""):
                 h.update(chunk)
                 size += len(chunk)
