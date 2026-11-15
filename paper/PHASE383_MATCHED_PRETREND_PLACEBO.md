@@ -1,0 +1,9 @@
+# Phase 383 — Exact matched-date pretrend and placebo contrasts
+
+This exploratory diagnostic computes each treated-minus-control rate on identical calendar dates, an equal-date pre/post contrast within each matched pair, and an equal-pair average. It separately fits an exact-rational OLS slope of each pair's pre-window rate difference against elapsed **calendar days**, then averages those slopes equally across pairs. This is a descriptive diagnostic, not a parallel-trends test with calibrated size.
+
+Input validation rejects missing matched observations, duplicate rows, invalid numerator/denominator counts, invalid dates, overlapping windows, insufficient pre-window dates and unexpected pairs. The denominator is the specified count denominator; do not mix trade-count and share-volume denominators. Pair membership and security/exchange controls must be authenticated upstream. Phase 381/382 calendar and overlap checks must be applied upstream for multiple placebo boundaries.
+
+Nine deterministic tests passed locally on constructed observations (2026-11-15). No SEC source observations or original dated placebo results were used. The complete published repository suite was not run. No standard errors, p-values, randomization claims or causal identification are supplied. A nonzero September slope or substantial October placebo estimate would undermine straightforward attribution even if the November contrast is nonzero.
+
+**Research status:** November 14, 2026 target missed; manuscript uncertified. Remaining critical gates: authenticate source panel and treatment roster, recover the original 78 dated placebo estimates, reconcile September pretrends and October placebo warnings, document sample attrition and weighting sensitivity, implement matched-group and common-date/serial-dependence-aware empirical uncertainty, and inventory/import licensable historical archives. This phase does not satisfy any empirical gate.
