@@ -1,0 +1,9 @@
+# Phase 394 — Observed-session overlap audit for dated placebos
+
+This read-only diagnostic measures **shared observed trading sessions** among dated placebo estimation windows. It deliberately does not infer trading sessions from weekdays or nominal start/end dates. Input is a JSON array of objects with unique string `id` and nonempty `sessions` lists of ISO dates. Run `python scripts/phase394_placebo_overlap.py windows.json`. Run tests from repository root with `PYTHONPATH=scripts python -m unittest discover -s tests -p 'test_phase394_placebo_overlap.py'`.
+
+For each pair, output includes shared session count, Jaccard intersection/union, and whether observed windows are identical. The concentration diagnostic `(sum session appearances)^2 / sum(session reuse counts squared)` is a descriptive **effective count of session appearances**, NOT an effective number of independent placebo estimates, standard error, or valid multiple-testing correction. Pairwise overlapping placebo estimates can also share securities, controls, and outcomes; overlap alone does not quantify their statistical correlation.
+
+Local verification on 2026-11-15: nine deterministic unit tests passed using constructed dates; no original SEC observations or the 78 dated placebo records were available for this audit. No historical ZIPs imported. The October 2025 placebo warning, September pretrends, historical round-lot treatment roster, weighting/selection sensitivity, and matched-pair plus serial-date inference remain unresolved. Manuscript is not certified; November 14, 2026 target was missed.
+
+**Next:** recover authenticated placebo session rosters and source hashes, audit real overlap, then assess pretrends and placebo distributions with matched-group/common-date and serial-dependence-aware uncertainty. Do not infer a causal reform effect.
