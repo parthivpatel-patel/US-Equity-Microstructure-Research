@@ -1,0 +1,9 @@
+# Phase 381 — Calendar-aware placebo eligibility audit
+
+This is a deterministic, zero-cost prerequisite to reconstructing the original dated placebo estimates. Given a declared sequence of observed trading sessions, proposed placebo boundaries, and fixed counts of pre/post sessions, the script identifies eligible windows, their exact session dates, and rejection reasons. It accepts a contamination-exclusion set, including the actual November 3, 2025 reform date where relevant. It does **not** estimate an effect, validate the trading calendar, or certify that every pair/exchange was observed on each listed session.
+
+A proposed boundary falling on a nontrading day uses the latest observed sessions strictly before the boundary and the earliest observed sessions on or after it; therefore it can select the same effective pre/post split as another candidate. Researchers must deduplicate *effective windows* before using placebo distributions. Windows that cross the actual reform or other contaminated dates must be rejected. Session-count symmetry does not ensure comparable calendar durations or market conditions.
+
+Eight deterministic tests passed locally on constructed session dates, including a weekend boundary, contaminated window, insufficient history, duplicate input, and out-of-order sessions. The test dates are not authenticated market observations. No claim is made about the historical 78 placebo estimates, September pretrends, October warning, or causal effects.
+
+Next: recover authenticated source panels and dated placebo definitions; establish session completeness by matched pair and exchange; flag overlapping/duplicate effective windows; then estimate pretrends and placebos with dependence-aware inference. The November 14, 2026 publication target was missed; the manuscript remains uncertified.
