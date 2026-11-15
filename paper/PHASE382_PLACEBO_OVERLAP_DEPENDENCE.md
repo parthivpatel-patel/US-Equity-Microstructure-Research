@@ -1,0 +1,9 @@
+# Phase 382 — Effective-window overlap and placebo dependence
+
+This diagnostic consumes the Phase 381 calendar audit and identifies (1) different nominal placebo dates producing identical pre/post session windows, (2) distinct windows sharing trading sessions, and (3) connected components in the resulting overlap graph. It excludes ineligible windows and fails closed on duplicate eligible boundaries, invalid session order, and overlapping pre/post sessions within a single window.
+
+**Interpretation.** A distribution of placebo estimates constructed from overlapping windows cannot be treated as independent draws. Connected components summarize mechanical reuse of dates, but they are **not** valid statistical clusters by themselves; common shocks, cross-security dependence, serial correlation and selection of candidate dates may remain even for disjoint windows. Removing duplicate windows does not establish exchangeability or a valid randomization test. A defensible analysis must authenticate the underlying panel, specify placebo dates ex ante or document selection, reconstruct original dated estimates, and use matched-group plus common-date and serial-dependence-aware uncertainty procedures with transparent assumptions.
+
+The script is deliberately descriptive and does not compute a p-value, effect estimate, effective sample size or causal conclusion. Eight deterministic unit tests use synthetic strings representing ordered sessions, not market observations. Neither the original 78 placebo estimates nor the September/October diagnostics are reproduced. No source or treatment authentication is claimed.
+
+The November 14, 2026 manuscript deadline was missed. This research remains uncertified pending source-data provenance, historical treatment roster, September pretrends, substantial October placebo warning, sample selection and weighting sensitivity, and actual dependence-aware empirical inference.
