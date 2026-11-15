@@ -1,0 +1,11 @@
+# Phase 376 — Exact balanced matched-pair and common-date contrast
+
+**Scope:** Deterministic methodological implementation only. No authenticated SEC observations or treatment assignments were used. The November 14, 2026 publication deadline was missed; the manuscript remains uncertified.
+
+The script computes a matched treated-minus-control rate difference within each pair and date, subtracts each pair's pre-period average from its post-period average, and averages pairs equally. It requires identical observed dates for treated and control members and rejects incomplete or duplicated pair/date/arm grids. Exact integer and rational arithmetic avoid floating-point rounding. A shared additive shock to treated and control *rates* on the same date cancels algebraically, but heterogeneous common-date responses need not cancel.
+
+This estimator is descriptive, not certified causal DiD: matching quality, treatment authentication, selection, differential pretrends, exchange composition, September pretrends, October placebo behavior and contemporaneous shocks remain identification threats. It does not supply standard errors, serial-dependence adjustment, matched-group resampling, exchange fixed effects or trading-calendar authentication. Equal weighting differs from pooled volume-weighted ratios; zero-denominator rows fail closed.
+
+**Local verification:** Eight deterministic constructed-data tests passed, covering exact contrasts, common additive shocks, equal pair weighting, missing and duplicate observations, overlapping windows, fractional counts and large integers. Run `PYTHONPATH=scripts python -m unittest discover -s tests -p 'test_phase376_matched_date_contrast.py'`. Exact published checkout and full repository suite remain untested.
+
+**Next empirical gate:** Recover authenticated SEC security-date-exchange records and historical round-lot assignments, disclose matched pairs and calendar alignment, reconstruct original 78 dated placebo estimates, and estimate placebo/reform contrasts with pair-level and common-date/serial-dependence-aware uncertainty. Do not treat the historical 2-of-78 ranking as a calibrated p-value. No historical ZIP archives were imported in this phase.
