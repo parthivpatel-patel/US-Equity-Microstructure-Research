@@ -1,0 +1,11 @@
+# Phase 378 — Exchange-stratified matched-date descriptive contrast
+
+**Status:** Methodological fixture validation only. The November 14, 2026 deadline was missed; the manuscript remains uncertified.
+
+Phase 376 matches treated and control rates within a pair and date but does not explicitly preserve exchange strata. This supplementary estimator requires the complete Cartesian grid of matched pairs × dates × exchanges × treatment arms. Within each exchange, it computes the pre/post difference in treated-minus-control rates for each pair, then averages equally across pairs. The overall descriptive contrast averages exchange-specific estimates equally. Missing exchange-pair-date-arm cells, duplicates, malformed integer counts, overlapping windows, and zero denominators fail closed. Exact rational arithmetic prevents floating-point loss. No inference is implemented.
+
+**Constructed verification:** Eight deterministic local tests passed on November 15, 2026. In a two-pair, two-exchange constructed fixture, the X exchange effect is 1/2, Y is zero, and the equal-exchange estimate is 1/4. These are NOT SEC market estimates. Run `PYTHONPATH=scripts python -m unittest discover -s tests -p 'test_phase378_exchange_stratified.py'`.
+
+**Limitations:** The complete Cartesian-grid requirement is intentionally strict and can induce severe complete-case selection if applied uncritically to real data. It assumes a common exchange set for every matched pair and date, which may be infeasible for actual observations. Equal-exchange weighting is not a share-volume or trade-count pooled estimand. Exchange effects are descriptive and do not remove time-varying confounding. The September pretrend, October placebo, original dated 78 placebo estimates, Phase 130 contradiction, treatment assignments, source provenance, weighting sensitivity, and common-date/serial-dependence-aware uncertainty remain unresolved. Source and treatment authentication flags are false. No authenticated SEC observations or historical ZIPs were processed or imported.
+
+**Next:** Reconstruct authenticated historical source panel and exchange membership, quantify complete-case attrition, compare equal-exchange and activity-weighted estimands, and only then calculate empirical matched-date placebo and pretrend diagnostics with dependence-aware inference.
