@@ -1,0 +1,9 @@
+# Phase 429 — Archived p-value and confidence-interval reproduction (2026-11-17)
+
+Input: existing public `archive/recovered_outputs/roundlot_phase2_inference_2026-10-27.csv`, GitHub blob `be655daf88af11e984376f5c75dbf066aaa23418`. Recomputed two-sided normal-reference p-values as `erfc(abs(effect/se_HC3)/sqrt(2))` and 95% confidence endpoints as `effect ± NormalDist().inv_cdf(.975)*se_HC3`. This is a *derived-output arithmetic audit*, not estimation from SEC records.
+
+All five archived rows passed. The largest absolute p-value discrepancy was **8.032e-16**, and the largest confidence-endpoint discrepancy was **1.982e-16** (floating-point rounding). Seven deterministic tests passed on the local prototype. The published source uses the same calculations and tests, but the exact published checkout has not been independently executed. The October placebo still uses 2,258 securities versus 2,262 for the four main estimates.
+
+**Interpretation:** The archived p-values and intervals are mutually consistent with a two-sided normal HC3 reference. This does not validate the HC3 standard errors, causal identification, common sample support, historical source authenticity, treatment labels, or clustered/serial dependence. The large October placebo, September pretrends, and share-volume specification sign reversal remain unresolved. Do not present these nominal p-values as publication-ready inference.
+
+**Next gate:** authenticate original SEC security–exchange–date data and matched assignments; run September and October diagnostics on common support with exchange controls, selection/weighting sensitivity, matched-group and common-date dependence, and serial-block resampling. Historical research ZIPs not recovered or imported this phase; inventory remains incomplete. November 14 publication deadline missed; manuscript not publication-certified. Independent of GIG and other projects.
