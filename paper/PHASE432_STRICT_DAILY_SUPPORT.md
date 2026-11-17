@@ -1,0 +1,7 @@
+# Phase 432 — Strict daily fixed-security support gate (2026-11-17)
+
+Phase 431 tests pre/post fixed-security intersection but does not require a paired treated/control arm on **every observed date**. This phase adds that stricter coverage gate, keeping match groups and exchanges separate. A unit passes only if both arms appear on every observed date in each period and at least one security in each arm persists across all paired dates in both periods. The script rejects duplicate security/exchange/date records, invalid count bounds, weekend dates, and unstable group/treatment assignments (the latter reported and causes CLI exit 2). This is a deliberately conservative support diagnostic, not a requirement for every valid estimand.
+
+Nine deterministic tests passed on a locally executed equivalent prototype; the exact published implementation must still be run from its GitHub checkout. Constructed examples show that date-by-date security churn and a missing control arm on one date defeat strict support despite some paired dates. No authenticated historical SEC observations were available and no effect or placebo statistics were estimated. The October placebo warning, September pretrends, treatment authentication, selection/weighting sensitivity, and serial/common-date/matched-group dependence remain unresolved.
+
+The November 14, 2026 target was missed. Manuscript not publication-certified. No licensed data or new historical ZIP archives imported. Phase 430 prototype/tests remain unpublished. Independent of GIG and all other projects.
