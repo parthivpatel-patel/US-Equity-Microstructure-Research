@@ -1,0 +1,52 @@
+{
+  "baseline_trade_weight_effective_n": {
+    "control": 134.6544602926308,
+    "treated": 10.39643167248796
+  },
+  "baseline_treated_minus_control": {
+    "hidden_trade_rate_pp": 14.567165886132027,
+    "hidden_volume_rate_pp": 20.13700829390799
+  },
+  "input_sha256": "2ccb80427a765ca3858f11f2874d6f87a79a559ec1fdeafc34420e82840e5bbb",
+  "n_control": 2194,
+  "n_securities": 2262,
+  "n_treated": 68,
+  "scenarios": [
+    {
+      "scenario": "equal_security",
+      "n_treated": 68,
+      "n_control": 2194,
+      "hidden_trade_rate_diff_pp": -3.462928586947823,
+      "hidden_volume_rate_diff_pp": -2.5720529010913387
+    },
+    {
+      "scenario": "baseline_trade_count_weighted",
+      "n_treated": 68,
+      "n_control": 2194,
+      "hidden_trade_rate_diff_pp": -2.70639222256212,
+      "hidden_volume_rate_diff_pp": -1.0064731886966585
+    },
+    {
+      "scenario": "within_arm_upper_75pct_baseline_trades",
+      "n_treated": 51,
+      "n_control": 1645,
+      "hidden_trade_rate_diff_pp": -4.158266453620542,
+      "hidden_volume_rate_diff_pp": -3.0891443029002454
+    },
+    {
+      "scenario": "max_days_both_periods",
+      "n_treated": 68,
+      "n_control": 2162,
+      "hidden_trade_rate_diff_pp": -3.5191474291184246,
+      "hidden_volume_rate_diff_pp": -2.5982106277080503
+    },
+    {
+      "scenario": "treated_trade_range_overlap",
+      "n_treated": 68,
+      "n_control": 990,
+      "hidden_trade_rate_diff_pp": -3.4807158658798207,
+      "hidden_volume_rate_diff_pp": -2.385628566341088
+    }
+  ],
+  "scope": "processed Phase-2 panel only; no raw SEC verification, no causal interpretation"
+}
