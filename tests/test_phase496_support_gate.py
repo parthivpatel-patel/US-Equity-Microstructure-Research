@@ -35,3 +35,13 @@ def test_outside_universe_rejected():
 
 def test_threshold():
     e,t=fixture(); assert support_gate(e,e,t,'2025-10-03',2)['admitted_exchanges']==[]
+
+
+def test_compact_cutoff_rejected_instead_of_lexical_misclassification():
+    e, t = fixture()
+    with pytest.raises(ValueError, match='noncanonical cutoff'):
+        support_gate(e, e, t, '20251003')
+
+def test_canonical_cutoff_still_admitted():
+    e, t = fixture()
+    assert support_gate(e, e, t, '2025-10-03')['admitted_exchanges'] == ['X']
