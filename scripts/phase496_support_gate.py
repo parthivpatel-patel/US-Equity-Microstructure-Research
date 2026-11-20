@@ -12,6 +12,8 @@ def support_gate(eligibility, observations, treatment, cutoff, min_common_each_s
         boundary = date.fromisoformat(cutoff)
     except (TypeError, ValueError) as exc:
         raise ValueError('invalid cutoff') from exc
+    if not isinstance(cutoff, str) or boundary.isoformat() != cutoff:
+        raise ValueError('noncanonical cutoff')
     if not isinstance(min_common_each_side, int) or isinstance(min_common_each_side, bool) or min_common_each_side < 1:
         raise ValueError('invalid minimum support')
     def validate(rows):
