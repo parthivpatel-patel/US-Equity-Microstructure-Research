@@ -1,0 +1,100 @@
+{
+  "control_pretrade_weight_concentration": {
+    "top1_share": 0.0589423902378342,
+    "top5_share": 0.1394646993333747
+  },
+  "dr": {
+    "control_leave_one_out_equal_pp_range": [
+      -3.481378551667898,
+      -3.441685212137942
+    ],
+    "equal_security_gap_pp": -3.462928586947823,
+    "pretrade_weighted_gap_pp": -2.70639222256212,
+    "top_5_treated_weight_influence": [
+      {
+        "abs_change_pp": 1.0622692461807421,
+        "leave_one_out_gap_pp": -3.768661468742862,
+        "ticker": "TSLA"
+      },
+      {
+        "abs_change_pp": 0.40558342674355563,
+        "leave_one_out_gap_pp": -2.3008087958185643,
+        "ticker": "NFLX"
+      },
+      {
+        "abs_change_pp": 0.2984154796905645,
+        "leave_one_out_gap_pp": -2.4079767428715555,
+        "ticker": "META"
+      },
+      {
+        "abs_change_pp": 0.11732942601892082,
+        "leave_one_out_gap_pp": -2.823721648581041,
+        "ticker": "MSTR"
+      },
+      {
+        "abs_change_pp": 0.07568908071804037,
+        "leave_one_out_gap_pp": -2.7820813032801603,
+        "ticker": "AVGO"
+      }
+    ],
+    "treated_leave_one_out_equal_pp_range": [
+      -3.6249017588357586,
+      -3.287580909450088
+    ],
+    "treated_leave_one_out_weighted_pp_range": [
+      -3.768661468742862,
+      -2.3008087958185643
+    ]
+  },
+  "dv": {
+    "control_leave_one_out_equal_pp_range": [
+      -2.5907196516397795,
+      -2.554880601769813
+    ],
+    "equal_security_gap_pp": -2.5720529010913387,
+    "pretrade_weighted_gap_pp": -1.0064731886966585,
+    "top_5_treated_weight_influence": [
+      {
+        "abs_change_pp": 1.2692865886597384,
+        "leave_one_out_gap_pp": -2.275759777356397,
+        "ticker": "TSLA"
+      },
+      {
+        "abs_change_pp": 0.3985227241017404,
+        "leave_one_out_gap_pp": -0.6079504645949181,
+        "ticker": "META"
+      },
+      {
+        "abs_change_pp": 0.3359471181238267,
+        "leave_one_out_gap_pp": -0.6705260705728318,
+        "ticker": "NFLX"
+      },
+      {
+        "abs_change_pp": 0.14530404921481965,
+        "leave_one_out_gap_pp": -1.1517772379114781,
+        "ticker": "MSFT"
+      },
+      {
+        "abs_change_pp": 0.1044730066059385,
+        "leave_one_out_gap_pp": -0.90200018209072,
+        "ticker": "DASH"
+      }
+    ],
+    "treated_leave_one_out_equal_pp_range": [
+      -2.7084700833263655,
+      -2.434679077913984
+    ],
+    "treated_leave_one_out_weighted_pp_range": [
+      -2.275759777356397,
+      -0.6079504645949181
+    ]
+  },
+  "input_sha256": "2ccb80427a765ca3858f11f2874d6f87a79a559ec1fdeafc34420e82840e5bbb",
+  "n_control": 2194,
+  "n_treated": 68,
+  "scope": "archived processed security panel; not source authenticated or causal",
+  "treated_pretrade_weight_concentration": {
+    "top1_share": 0.26211151657724985,
+    "top5_share": 0.5467474997189314
+  }
+}
