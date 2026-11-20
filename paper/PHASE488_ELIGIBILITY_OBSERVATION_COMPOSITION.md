@@ -1,0 +1,11 @@
+# Phase 488 — Eligibility versus observation composition (2026-11-19)
+
+This phase introduces a cutoff-aware diagnostic distinguishing **eligible** from **observed** security–exchange–date keys. Its unit counts separately report pre-only, post-only, and both-period membership; exchange-specific missing eligible cells are also counted. Explicit zero outcomes are retained as observed. Input files are fingerprinted with SHA-256. The cutoff must leave eligible dates on both sides.
+
+A local Python implementation passed eight deterministic unittest cases (8/8) covering constructed counts, observed zero, membership divergence, exchange breakdown, invalid outside-universe keys, duplicate keys, nonfinite outcomes, boundary cutoffs, and changing file hashes. This is a **constructed validation fixture only**, not SEC data. The original Phase 487 local prototype was not recoverable byte-for-byte; the Phase 488 implementation is a replacement rather than a restoration.
+
+The historical September pretrend and substantial October 2025 placebo warning remain unresolved. A change in observed composition cannot be attributed to eligibility changes without authenticated listing, venue and date-specific eligibility data. An eligibility universe inferred from the observed outcomes would conceal missingness. Neither robust standard errors nor a complete-case restriction alone resolves selection bias.
+
+**Publication gate:** No historical SEC observations were analyzed. SEC source files, trading calendars, round-lot treatment assignment and date-specific eligibility remain unauthenticated; matched security/exchange plus common-date and serial-dependence-aware inference remains outstanding. Recovered Phase 430/436 archives and Phase 472 package remain unimported. The November 14 deadline was missed; the paper is not publication-certified.
+
+The Phase 488 local tested files are retained in the session workspace at /mnt/data/quant_phase488. This report alone does not certify a published executable checkout.
