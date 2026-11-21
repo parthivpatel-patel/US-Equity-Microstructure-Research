@@ -105,7 +105,11 @@ def main():
         json.dumps(summary, indent=2, sort_keys=True) + '\n')
     print(json.dumps({'quarters': [
         {'quarter': r['quarter'], 'status': r['status'],
-         'zip_sha256': r.get('zip_sha256')} for r in summary['quarters']]}, indent=2))
+         'zip_sha256': r.get('zip_sha256'),
+         'last_error_type': r['attempts'][-1].get('error_type'),
+         'last_error': r['attempts'][-1].get('error'),
+         'http_status': r['attempts'][-1].get('http_status')}
+        for r in summary['quarters']]}, indent=2))
     return 0 if all(r['status'] == 'retrieved_unverified_source'
                     for r in summary['quarters']) else 1
 
