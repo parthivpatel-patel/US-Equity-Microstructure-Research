@@ -128,7 +128,7 @@ The 2025 Q3/Q4 original SEC ZIP acquisition remains a separate **source-integrit
 
 **Research integrity note:** No figure derived from unverified raw SEC observations should be labeled as a direct SEC replication. A visual of the already-computed processed-panel sensitivity is allowable only if it is generated from its published numerical table and labeled accordingly.
 
-## 8. Corrected historical listing-snapshot reconciliation (November 21, 2026)
+## 9. Corrected historical listing-snapshot reconciliation (November 21, 2026)
 
 The initial [historical snapshot audit](../provenance/NASDAQ_GITHUB_SNAPSHOT_CROSSCHECK_2026-11-21.md) inadvertently counted a file-creation trailer and an empty row as securities in each third-party CSV. The [subsequent direct reparse and full-universe reconciliation](../provenance/NASDAQ_SNAPSHOT_FULL_UNIVERSE_CORRECTION_2026-11-21.md) supersedes those counts: the November 1 and December 1 Git-commit snapshots contain **5,159** and **5,222 valid security rows**, respectively, with **84** non-100-share securities in each (80 at 40 shares, 4 at 10 shares). Their non-100 symbol sets and sizes agree across the snapshots.
 
@@ -136,7 +136,7 @@ All **68/68 provisionally treated symbols** in the recovered 2,262-security proc
 
 These are third-party Git history snapshots, not authenticated Nasdaq effective-date records. Commit dates do not establish the actual directory observation date or the September price-evaluation input. Agreement of two post-assignment snapshots cannot certify the November 3 assignment, confirm pre-reform status, or establish a causal treatment effect. Official Nasdaq September reference prices, November 3 directory records, and symbol-history verification remain outstanding. The original SEC Q3/Q4 ZIPs and the processed-panel provenance also remain unauthenticated. The previously published 86/18 counts and statement that the 68-name join was not yet performed are **superseded**; earlier audit files are preserved as an error trail.
 
-## 8. Treatment-versus-market-wide implementation distinction (primary-source audit, November 21)
+## 10. Treatment-versus-market-wide implementation distinction (primary-source audit, November 21)
 
 The May 7, 2025 [Nasdaq UTP Vendor Alert #2025-10](https://classic.nasdaqtrader.com/TraderNews.aspx?id=UTP2025-10) identifies **two different changes** effective November 3: (a) a security-specific round-lot tier based on the **average primary-listing-exchange closing price over all September 2025 trading days** (100 shares through $250, 40 above $250 through $1,000, 10 above $1,000 through $10,000, and 1 above $10,000), and (b) a **market-wide SIP quotation-size representation change** from numbers of lots to actual shares. Nasdaq's alert explicitly gives a 100-share-round-lot example where the disseminated quote-size field changes from 3 to 300 for a 300-share quotation. Thus a stock retaining a 100-share round lot is **not necessarily untreated by every contemporaneous market-data change**. This is a concrete threat to a simple treated-versus-control causal interpretation, even if the round-lot tier roster were authenticated.
 
