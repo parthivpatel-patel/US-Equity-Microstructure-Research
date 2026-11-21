@@ -1,0 +1,41 @@
+{
+  "inputs": {
+    "nasdaq_file_sha256": "844f0b46fc7aa9b735aa8c033c3f97fffe85b9507bb26b6f64b40597afef8b99",
+    "nyse_file_sha256": "40af12d8ddf73166330d54a96c2094f2f244c208e5bda0203567894a1f6822f4",
+    "processed_panel_sha256": "2ccb80427a765ca3858f11f2874d6f87a79a559ec1fdeafc34420e82840e5bbb"
+  },
+  "interpretation": "NYSE file is a potentially useful September 2025 measurement-month cross-venue historical roster, but 0 study ticker overlap prevents direct authentication of Nasdaq treated cohort. The Nasdaq file is dated September 2026 and cannot authenticate November 2025 assignments. Source origin and completeness remain unverified.",
+  "nasdaq_file": {
+    "historical_202509_rows": 0,
+    "invalid_or_non_data_rows": 1,
+    "usable_as_2025_treatment_roster": false,
+    "valid_202609_rows": 5636
+  },
+  "nyse_snapshot": {
+    "listed_mic_counts": {
+      "ARCX": 2486,
+      "XASE": 298,
+      "XNYS": 2882
+    },
+    "lot_size_counts": {
+      "1": 1,
+      "10": 13,
+      "40": 156,
+      "100": 5496
+    },
+    "measurement_month": "202509",
+    "rows": 5666,
+    "trade_date": "20251031",
+    "unique_symbols": 5666
+  },
+  "overlap": {
+    "panel_tickers_in_nyse_listing_snapshot": 0,
+    "treated_panel_tickers_in_nyse_listing_snapshot": 0
+  },
+  "scope": "Local-file integrity and cross-source overlap; NOT independently authenticated NYSE/Nasdaq feed or SEC original",
+  "study_panel": {
+    "rows": 2262,
+    "treated_rows": 68,
+    "unique_tickers": 2262
+  }
+}
