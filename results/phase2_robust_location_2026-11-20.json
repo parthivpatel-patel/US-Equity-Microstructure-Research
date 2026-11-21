@@ -1,0 +1,64 @@
+{
+  "input_sha256": "2ccb80427a765ca3858f11f2874d6f87a79a559ec1fdeafc34420e82840e5bbb",
+  "location_sensitivity": [
+    {
+      "control_n": 2194,
+      "outcome": "dr",
+      "treated_minus_control_pp": -3.462928586947823,
+      "treated_n": 68,
+      "trim_each_tail": 0
+    },
+    {
+      "control_n": 2194,
+      "outcome": "dr",
+      "treated_minus_control_pp": -3.5150692996278043,
+      "treated_n": 68,
+      "trim_each_tail": 0.05
+    },
+    {
+      "control_n": 2194,
+      "outcome": "dr",
+      "treated_minus_control_pp": -3.5597691279632033,
+      "treated_n": 68,
+      "trim_each_tail": 0.1
+    },
+    {
+      "control_n": 2194,
+      "outcome": "dr",
+      "treated_minus_control_pp": -3.4790251997336803,
+      "treated_n": 68,
+      "trim_each_tail": 0.2
+    },
+    {
+      "control_n": 2194,
+      "outcome": "dv",
+      "treated_minus_control_pp": -2.5720529010913387,
+      "treated_n": 68,
+      "trim_each_tail": 0
+    },
+    {
+      "control_n": 2194,
+      "outcome": "dv",
+      "treated_minus_control_pp": -2.6333951404373854,
+      "treated_n": 68,
+      "trim_each_tail": 0.05
+    },
+    {
+      "control_n": 2194,
+      "outcome": "dv",
+      "treated_minus_control_pp": -2.642802031233637,
+      "treated_n": 68,
+      "trim_each_tail": 0.1
+    },
+    {
+      "control_n": 2194,
+      "outcome": "dv",
+      "treated_minus_control_pp": -2.6183098486825553,
+      "treated_n": 68,
+      "trim_each_tail": 0.2
+    }
+  ],
+  "n_control": 2194,
+  "n_treated": 68,
+  "source": "processed Phase-2 stock panel; original SEC ZIP and treatment labels unauthenticated"
+}
