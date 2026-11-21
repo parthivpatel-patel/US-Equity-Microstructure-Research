@@ -1,0 +1,33 @@
+name: SEC 2025 source provenance acquisition
+on:
+  push:
+    paths:
+      - '.github/workflows/sec-2025-provenance.yml'
+      - 'scripts/sec_archive_provenance_probe.py'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - name: Probe original SEC ZIPs and hash members (no raw redistribution)
+        id: probe
+        continue-on-error: true
+        run: |
+          python3 scripts/sec_archive_provenance_probe.py --out provenance-run
+      - name: Publish metadata artifact even on acquisition failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: sec-2025-q3-q4-provenance-only
+          path: provenance-run/sec_q3_q4_2025_provenance.json
+          if-no-files-found: warn
+          retention-days: 14
+      - name: Fail clearly when SEC retrieval was not authenticated
+        if: steps.probe.outcome != 'success'
+        run: |
+          echo 'SEC archive acquisition failed; inspect metadata artifact for HTTP/DNS errors.'
+          exit 1
