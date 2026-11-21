@@ -1,0 +1,12 @@
+{
+  "source": "archived processed Phase 2 stock panel, not authenticated original SEC records",
+  "sha256": "2ccb80427a765ca3858f11f2874d6f87a79a559ec1fdeafc34420e82840e5bbb",
+  "n_treated": 68,
+  "n_controls": 2194,
+  "covariates": {
+    "r_pre": {"treated_median": 0.493822871040817, "control_median": 0.32720639399031004, "standardized_mean_difference": 1.9026211206948997, "treated_outside_control_minmax": 0, "controls_inside_treated_minmax": 819},
+    "v_pre": {"treated_median": 0.4961389823098178, "control_median": 0.2755115205013716, "standardized_mean_difference": 2.494317808614401, "treated_outside_control_minmax": 0, "controls_inside_treated_minmax": 751},
+    "trades_pre": {"treated_median": 312931.5, "control_median": 62195.0, "standardized_mean_difference": 1.3391076348954674, "treated_outside_control_minmax": 0, "controls_inside_treated_minmax": 990}
+  },
+  "full_23_pre_19_post_days": {"treated": 68, "controls": 2162}
+}
