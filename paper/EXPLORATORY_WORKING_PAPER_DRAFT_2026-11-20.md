@@ -90,3 +90,8 @@ Direct local acquisition of the original SEC Q3 archive failed at DNS resolution
 - A fully source-verified empirical paper requires actual original Q3/Q4 ZIP fingerprints and row reconciliation, a historical stock-specific effective-date treatment roster, common-date September/October falsification, and dependence-aware inference.
 - A faster **explicitly provisional exploratory methodological release** can present the recovered processed-panel sensitivity and inherited historical warning signs with separate evidence tiers, direct code links, known non-replication and the caveat that the historical SEC-derived inputs have not been independently authenticated. It must **not** be advertised as a validated event-study result or final causal paper.
 - If the hosted SEC probe also fails, preserve the failure logs and seek another legitimate network environment rather than asserting success or endlessly generating small synthetic-only modules.
+
+
+### Hosted source-retrieval outcome (verified November 21, 2026)
+
+The GitHub-hosted provenance workflow **did execute**, but both 2025 Q3 and Q4 SEC archive requests returned **HTTP 403 Forbidden** after retries ([workflow run 44881411585](https://github.com/parthivpatel-patel/US-Equity-Microstructure-Research/actions/runs/44881411585)). The local container independently failed at DNS resolution. Thus neither execution environment has obtained original SEC ZIP bytes or member hashes. This materially limits source certification; it does **not** invalidate the official SEC archive listing or justify replacing source observations with invented data. The manuscript remains an explicitly exploratory, processed-data-based methodological draft. See `provenance/SEC_Q2_Q4_2025_SOURCE_ACQUISITION_STATUS.md`.
