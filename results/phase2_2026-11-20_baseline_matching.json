@@ -1,0 +1,60 @@
+{
+  "input_sha256": "2ccb80427a765ca3858f11f2874d6f87a79a559ec1fdeafc34420e82840e5bbb",
+  "source_authentication": "NOT VERIFIED",
+  "treated": 68,
+  "controls": 2194,
+  "method": "Euclidean nearest controls in pooled-SD standardized baseline hidden trade rate, hidden volume rate and log1p(pre-trades); replacement allowed",
+  "unmatched_smd": {
+    "r_pre": 1.4750449188566175,
+    "v_pre": 1.9361320061618015,
+    "log_trades_pre": 1.0875868204292287
+  },
+  "unmatched_count_gap_pp": -3.4629285869478186,
+  "unmatched_volume_gap_pp": -2.572052901091336,
+  "treated_nearest_distance_gt_0_5": 5,
+  "treated_nearest_distance_gt_1": 0,
+  "models": [
+    {
+      "k": 1,
+      "n_distinct_controls": 39,
+      "max_control_reuse": 9,
+      "max_nearest_distance": 0.6335068305669032,
+      "median_nearest_distance": 0.16116808879738118,
+      "smd_after": {
+        "r_pre": 0.01442214644752319,
+        "v_pre": 0.025235810687246642,
+        "log_trades_pre": 0.08371978319362576
+      },
+      "count_change_gap_pp": -1.1361956776509772,
+      "volume_change_gap_pp": -0.5745544870112433
+    },
+    {
+      "k": 3,
+      "n_distinct_controls": 78,
+      "max_control_reuse": 14,
+      "max_nearest_distance": 0.6335068305669032,
+      "median_nearest_distance": 0.16116808879738118,
+      "smd_after": {
+        "r_pre": 0.04478535876024182,
+        "v_pre": 0.06273579290367906,
+        "log_trades_pre": 0.10263365201506919
+      },
+      "count_change_gap_pp": -1.1409632447337432,
+      "volume_change_gap_pp": -0.623779528585948
+    },
+    {
+      "k": 5,
+      "n_distinct_controls": 107,
+      "max_control_reuse": 14,
+      "max_nearest_distance": 0.6335068305669032,
+      "median_nearest_distance": 0.16116808879738118,
+      "smd_after": {
+        "r_pre": 0.050587790587153715,
+        "v_pre": 0.07440013222260526,
+        "log_trades_pre": 0.11712278280289574
+      },
+      "count_change_gap_pp": -0.9397984699107264,
+      "volume_change_gap_pp": -0.36024857421926
+    }
+  ]
+}
