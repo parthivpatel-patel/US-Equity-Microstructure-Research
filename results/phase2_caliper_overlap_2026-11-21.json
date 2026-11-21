@@ -1,0 +1,72 @@
+{
+  "input_sha256": "2ccb80427a765ca3858f11f2874d6f87a79a559ec1fdeafc34420e82840e5bbb",
+  "source_authentication": "NOT VERIFIED",
+  "method": "1-NN with replacement; pooled-SD-scaled baseline covariates; post-match SMD uses full-sample SD",
+  "distance_quantiles": {
+    "0": 0.05375012905596683,
+    "1": 0.6335068305669032,
+    "0.25": 0.1005618389345151,
+    "0.5": 0.16116808879738118,
+    "0.75": 0.25998031806113736,
+    "0.9": 0.4326966408530704,
+    "0.95": 0.5234574173956179
+  },
+  "cases": [
+    {
+      "caliper": "none",
+      "n_treated": 68,
+      "n_distinct_controls": 39,
+      "max_control_reuse": 9,
+      "trade_gap_pp": -1.1361956776509772,
+      "volume_gap_pp": -0.5745544870112433,
+      "post_match_smd": {
+        "r_pre": 0.01442214644752319,
+        "v_pre": 0.025235810687247708,
+        "log_trades_pre": 0.08371978319362576
+      },
+      "max_distance": 0.6335068305669032
+    },
+    {
+      "caliper": 0.25,
+      "n_treated": 49,
+      "n_distinct_controls": 31,
+      "max_control_reuse": 6,
+      "trade_gap_pp": -0.5166260456658704,
+      "volume_gap_pp": -0.041208338047569494,
+      "post_match_smd": {
+        "r_pre": 0.00895340251814445,
+        "v_pre": 0.01176234501359359,
+        "log_trades_pre": 0.017139986106757644
+      },
+      "max_distance": 0.2413161069948924
+    },
+    {
+      "caliper": 0.5,
+      "n_treated": 63,
+      "n_distinct_controls": 37,
+      "max_control_reuse": 8,
+      "trade_gap_pp": -1.0378589471237603,
+      "volume_gap_pp": -0.4763594705372349,
+      "post_match_smd": {
+        "r_pre": 0.022150935214766656,
+        "v_pre": 0.03457225315439251,
+        "log_trades_pre": 0.0601293618527759
+      },
+      "max_distance": 0.47475979258201284
+    },
+    {
+      "caliper": 0.75,
+      "n_treated": 68,
+      "n_distinct_controls": 39,
+      "max_control_reuse": 9,
+      "trade_gap_pp": -1.1361956776509772,
+      "volume_gap_pp": -0.5745544870112433,
+      "post_match_smd": {
+        "r_pre": 0.01442214644752319,
+        "v_pre": 0.025235810687247708,
+        "log_trades_pre": 0.08371978319362576
+      },
+      "max_distance": 0.6335068305669032
+    }
+  ]
+}
