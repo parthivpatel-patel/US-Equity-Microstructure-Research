@@ -95,3 +95,35 @@ Direct local acquisition of the original SEC Q3 archive failed at DNS resolution
 ### Hosted source-retrieval outcome (verified November 21, 2026)
 
 The GitHub-hosted provenance workflow **did execute**, but both 2025 Q3 and Q4 SEC archive requests returned **HTTP 403 Forbidden** after retries ([workflow run 44881411585](https://github.com/parthivpatel-patel/US-Equity-Microstructure-Research/actions/runs/44881411585)). The local container independently failed at DNS resolution. Thus neither execution environment has obtained original SEC ZIP bytes or member hashes. This materially limits source certification; it does **not** invalidate the official SEC archive listing or justify replacing source observations with invented data. The manuscript remains an explicitly exploratory, processed-data-based methodological draft. See `provenance/SEC_Q2_Q4_2025_SOURCE_ACQUISITION_STATUS.md`.
+
+
+## 8. Identification and falsification decision (November 21, 2026)
+
+### What is and is not identified
+
+Let \(H_{i,p}^{(m)}\) denote the security-level period-aggregate hidden rate for metric \(m\) (eligible hidden trade count or eligible hidden share volume), and let \(D_i\) be the **provisional** treatment label. The principal processed-panel descriptive contrast is
+
+\[
+\widehat{\Delta}_m =
+\frac{1}{n_1}\sum_{i:D_i=1}(H_{i,post}^{(m)}-H_{i,pre}^{(m)})
+-
+\frac{1}{n_0}\sum_{i:D_i=0}(H_{i,post}^{(m)}-H_{i,pre}^{(m)}).
+\]
+
+It is a difference of *observed changes*, not a causal effect. For a causal interpretation one would additionally need a correct historical assignment roster, stable measurement and coverage, a defensible untreated counterfactual trend (including anticipation effects), and uncertainty accounting for common calendar shocks. The currently recovered stock-level data do not permit these conditions to be tested directly.
+
+**Selection/measurement mechanisms requiring separation:** September 2025 price levels determine the reform's size bands and are correlated with security capitalization, activity and baseline hidden-execution rates; October announcements and anticipatory order routing can move behavior before November 3; changes in market-wide volatility or exchange composition affect both groups; ticker joins and corporate actions can alter roster membership; eligibility denominators and security inclusion can shift across periods. These mechanisms can generate a treated/control change difference even with zero reform effect. Conditioning on pre-period hidden rates may reduce observed imbalance but can also change the estimand and induce regression-to-the-mean artifacts. Matching on baseline observables cannot solve unobserved or date-common confounding.
+
+### Falsification decision rule
+
+The October-only placebo differential, inherited September trend results and large baseline imbalance jointly make an unqualified parallel-trends story **unacceptable on current evidence**. A statistically nonzero placebo is not automatically a proof of an invalid design, particularly if the announcement or assignment information arrived during the placebo window. It does require a model of information timing, independent source replication, and a transparent assessment of whether a meaningful causal comparison remains plausible. No post hoc choice of placebo dates or favorable weighting is permitted to erase this concern.
+
+The 2025 Q3/Q4 original SEC ZIP acquisition remains a separate **source-integrity gate**: a 403 from GitHub-hosted runners and a local DNS failure prevent hashing and reconciling the actual source bytes. No original-source claim follows from a processed-panel checksum. Similarly, the historical NYSE reference file cannot establish a Nasdaq-specific effective-date roster; the recovered Nasdaq 2026 reference file is not a 2025 historical assignment source.
+
+### Release decision
+
+**Provisional methodological preprint: permissible with prominent evidence-tier disclosures.** The defensible contribution is a reproducible demonstration that provisional hidden-execution comparisons are highly sensitive to baseline balance, control reuse, caliper attrition, trade weighting, and regression specification, while inherited pre-reform summaries motivate falsification. The paper should avoid causal language in title, abstract, charts, conclusions, or social summaries; distinguish *recomputed processed-panel estimates* from *inherited, unreplicated daily-panel summaries*; link executable code and input digest; disclose that the original processed input is not distributed in the repository; and state that a clean third-party reproduction requires the exact input or a documented rebuild from authenticated sources.
+
+**Source-verified empirical paper: not yet eligible.** It additionally requires original Q3/Q4 ZIP and member hashes, security-date-exchange reconciliation, September price-band/round-lot roster and ticker continuity, independently rerun October placebo and September pretrends, and date-/security-dependent uncertainty. These are substantive gates, not cosmetic editorial tasks.
+
+**Research integrity note:** No figure derived from unverified raw SEC observations should be labeled as a direct SEC replication. A visual of the already-computed processed-panel sensitivity is allowable only if it is generated from its published numerical table and labeled accordingly.
