@@ -1,0 +1,42 @@
+{
+  "estimands": {
+    "hidden_trade_equal_security": {
+      "point_pp": -3.462928586947823,
+      "bootstrap_percentile_95_pp": [
+        -4.30926814797402,
+        -2.61008821426586
+      ],
+      "largest_treated_leave_one_out_shift_abs_pp": 0.17534767749773517
+    },
+    "hidden_trade_pretrade_weighted": {
+      "point_pp": -2.70639222256212,
+      "bootstrap_percentile_95_pp": [
+        -4.882489317962003,
+        -1.1597875522325214
+      ],
+      "largest_treated_leave_one_out_shift_abs_pp": 1.0622692461807421
+    },
+    "hidden_volume_equal_security": {
+      "point_pp": -2.5720529010913387,
+      "bootstrap_percentile_95_pp": [
+        -3.386719496004282,
+        -1.7834893902011355
+      ],
+      "largest_treated_leave_one_out_shift_abs_pp": 0.13737382317735447
+    },
+    "hidden_volume_pretrade_weighted": {
+      "point_pp": -1.0064731886966585,
+      "bootstrap_percentile_95_pp": [
+        -3.42041973981511,
+        0.6686670360449855
+      ],
+      "largest_treated_leave_one_out_shift_abs_pp": 1.2692865886597384
+    }
+  },
+  "method": "independent within-arm security bootstrap, not serial-dependence-aware",
+  "n_treated": 68,
+  "n_control": 2194,
+  "replicates": 5000,
+  "seed": 20251103,
+  "processed_input_sha256": "2ccb80427a765ca3858f11f2874d6f87a79a559ec1fdeafc34420e82840e5bbb"
+}
